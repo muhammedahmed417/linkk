@@ -1,0 +1,11 @@
+from flask import Flask
+import random
+app = Flask(__name__)
+
+facts_list = ["Teknolojik bağımlılık çalışması, modern bilimsel araştırmanın en ilgili alanlarından biridir.",
+              "Teknolojik bağımlılıkla mücadele etmenin bir yolu, zevk veren ve ruh halini iyileştiren faaliyetler aramaktır.",
+              "Sosyal ağların olumlu ve olumsuz yanları vardır ve bu platformları kullanırken her ikisinin de farkında olmalıyız."]
+@app.route("/")
+def facts():
+    return f'<h3>{random.choice(facts_list)}</h3>'
+app.run(debug=True)
